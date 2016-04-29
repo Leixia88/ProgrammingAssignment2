@@ -4,6 +4,7 @@
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
+#create a matrix like object, which return a set of funtions that return the matrix or the reverse of the matrix.
 	x_inverse <- NULL
 	set <- function( y ){
 		x <<- y
@@ -19,7 +20,8 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Write a short comment describing this function
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+        ## Return a matrix that is the inverse of 'x', first try get the inverse from the cached, if the cache
+        # doesn't exist, then calculate it.
 		x_inverse <- x$getinverse()
 		if( !is.null( x_inverse ) ){
 			message( "getting the cached inverse" )
